@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login/Sign-up</title>
+    <link rel="stylesheet" href="login.css">
+</head>
+
+<body>
+    <header>
+        <div class="navbar">
+            <div class="logo">
+                📚 LMS
+            </div>
+            <div class="tags">
+
+                <ul>
+                    <a href="index.html">
+                        <li>Home</li>
+                    </a>
+                    <a href="./about.html">
+
+                        <li>About</li>
+                    </a>
+                    <li>Books</li>
+                    <a href="./student.html">
+                        <li>Student</li>
+                    </a>
+                    <a href="./admin.html">
+                        <li>Admin</li>
+                    </a>
+                    <li>Contact</li>
+                </ul>
+                <!-- <a href="./login.html">
+
+                    <button type="button" class="new-btn" >Login</button>
+                </a>
+                <a href="./signup.html">
+
+                    <button type="button" class="new-btn" >Sign-up</button>
+                </a> -->
+            </div>
+
+        </div>
+    </header>
+    <div class="sections">
+        <div class="section1">
+            <img src="./images/img.png" alt="" height="100%" width="100%">
+        </div>
+        <div class="section2">
+            <div class="login">
+                <div class="input">
+                    <!-- <label for="email">Enter your email</label><br> -->
+
+                    <div class="pad">
+                        <input type="email" name="email" id="email" placeholder="Enter your email" class="btn">
+                    </div>
+                    <div class="pad">
+
+                        <input type="password" name="" id="password" placeholder="Enter your password" class="btn">
+                    </div>
+                    <div class="role">
+
+                        <input type="radio" name="role" id="admin" value="admin">
+                        <label for="admin">Admin</label>
+                        
+                        <input type="radio" name="role" id="user" value="user">
+                        <label for="user">User</label><br>
+                    </div>
+
+
+                    <button type="submit" class="b pad login-btn">Login</button>
+                </div>
+                <div class="divider">OR</div>
+                <button class="google-btn" onclick="googleLogin()">
+                    <img src="https://developers.google.com/identity/images/g-logo.png">
+                    Sign in with Google
+                </button>
+                <div class="option">
+
+                    <div>
+                        Don't have an account: 
+                    </div>
+                    <a href="./signup.html">
+
+                        <p> Register here</p>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="login.js"></script>
+</body>
+
+</html>

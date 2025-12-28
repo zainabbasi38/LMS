@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="signup.css">
+</head>
+
+<body>
+    <header>
+        <div class="navbar">
+            <div class="logo">
+                📚 LMS
+            </div>
+            <div class="tags">
+
+                <ul>
+                    <a href="index.html"><li>Home</li></a>
+                    <li>About</li>
+                    <li>Books</li>
+                    <a href="./student.html"><li>Student</li></a>
+                    <li>Contact</li>
+                </ul>
+                <a href="./login.html">
+
+                    <button type="button" class="btn" >Login</button>
+                </a>
+                <a href="./signup.html">
+
+                    <button type="button" class="btn" >Sign-up</button>
+                </a>
+            </div>
+
+        </div>
+    </header>
+    <div class="new">
+
+        <div class="signup">
+            <div class="input">
+                <!-- <form action=""> -->
+                    <label for="name">Enter your name</label>
+            <input id="n"  type="text" placeholder="Full Name" name="name" class="style"><br>
+                <label for="username">Enter your username</label>
+                <input type="text" placeholder="UserName" name="username" class="style"><br>
+                <label  for="email">Enter your email</label>
+                <input id="em" type="email" placeholder="Email" name="email" class="style"><br>
+                <label for="password">Enter your password</label>
+
+                <input id="pass" type="password" placeholder="Password" name="password" class="style"><br>
+                <!-- <input type="button" value="Sign-up"> -->
+                <button type="submit" onclick="Signup()">Sign-up</button>
+            <!-- </form> -->
+        </div>
+    </div>
+    </div>
+    <script src="signup.js"></script>
+</body>
+
+</html>

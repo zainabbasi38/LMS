@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LMS-Library Management System</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+        integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+    <div id="newchat" style="display: none;">
+        <div id="all">
+
+            <div id="messages"></div>
+        </div>
+        <div class="input-area">
+
+            <input type="text" name="" placeholder="Enter your query" id="input">
+            <i class="fa-solid fa-right-to-bracket" id="enter" onclick="Enter()"></i>
+        </div>
+        <!-- <div id="prompt" style="display: none;"></div>
+        <div id="response" style="display: none;"></div> -->
+        <button id="btn" onclick="Close()">Close</button>
+
+    </div>
+
+    <div class="chatbot" id="chat" onclick="Chatbot()">
+        <!-- <i ></i> -->
+        <i class="fa-solid fa-robot icon"></i>
+    </div>
+    <!-- Nvabar -->
+    <header>
+        <div class="navbar">
+            <div class="logo">
+                📚 LMS
+            </div>
+            <div class="tags">
+
+                <ul>
+                    <a href="index.html">
+                        <li>Home</li>
+                    </a>
+                    <a href="about.html">
+
+                        <li>About</li>
+                    </a>
+                    <li>Books</li>
+                    <a href="./student.html">
+                        <li>Student</li>
+                    </a>
+                    <a href="./admin.html">
+                        Admin
+                    </a>
+                    <li>Contact</li>
+                </ul>
+                <a href="./login.html">
+
+                    <button type="button" class="btn">Login</button>
+                </a>
+                <a href="./signup.html">
+
+                    <button type="button" class="btn">Sign-up</button>
+                </a>
+            </div>
+
+        </div>
+    </header>
+    <!-- Hero section -->
+    <div class="hero">
+        <div class="info">
+
+            <h1>Smart Library Management System</h1>
+            <p>Manage , explore and issued books digitally with ease</p>
+            <div class="buttons">
+                <div class="browse btn">
+                    Browse Books
+                </div>
+                <a href="./login.html">
+
+                    <div class="login-btn ">Login</div>
+                </a>
+            </div>
+        </div>
+        <div class="data">
+            <div class="books">
+                <h1>12,500+</h1>
+                <div>Total books</div>
+            </div>
+            <div class="books">
+                <h1>3,200+</h1>
+                <div>Total memebers</div>
+            </div>
+            <div class="books">
+                <h1>1,200+</h1>
+                <div>Issued Books</div>
+            </div>
+        </div>
+    </div>
+    <!-- Featured books -->
+    <div class="featured">
+        <h1>Featured Books</h1>
+        <div class="number">
+
+           
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="footer-container">
+
+            <!-- LMS -->
+            <div class="footer-box">
+                <h2><i class="fa-solid fa-book"></i> LMS</h2>
+                <p>
+                    Your trusted library management system for seamless book access and management.
+                </p>
+            </div>
+
+            <!-- Quick Links -->
+            <div class="footer-box">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Books</a></li>
+                    <li><a href="#">Dashboard</a></li>
+                    <li><a href="#">Admin</a></li>
+                </ul>
+            </div>
+
+            <!-- Contact -->
+            <div class="footer-box">
+                <h3>Contact</h3>
+                <p><i class="fa-solid fa-phone"></i> +1 (555) 123-4567</p>
+                <p><i class="fa-solid fa-envelope"></i> info@lms.edu</p>
+                <p><i class="fa-solid fa-location-dot"></i> 123 University Ave</p>
+            </div>
+
+            <!-- Follow Us -->
+            <div class="footer-box">
+                <h3>Follow Us</h3>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
+
+        </div>
+
+        <hr>
+
+        <p class="copyright">
+            © 2025 Library Management System. All rights reserved.
+        </p>
+    </footer>
+
+    <script>
+        function Chatbot() {
+            let chatbot = document.getElementById("chat");
+            chatbot.remove();
+            let newwindow = document.getElementById("newchat");
+            newwindow.style.display = "block"
+            // newwindow.style.height ="400px";
+            // newwindow.style.width ="400px";
+            // newwindow.style.backgroundColor ="antiquewhite"
+
+        }
+        function Close() {
+            let newWindow = document.getElementById("newchat");
+            newWindow.style.display = "none";
+            let chat = document.createElement("div");
+            chat.id = "chat";
+            document.body.appendChild(chat);
+            chat.innerHTML = `<i class="fa-solid fa-robot icon"></i>`;
+            chat.setAttribute("onclick", "Chatbot()");
+
+        }
+        async function Enter() {
+            const input = document.getElementById("input");
+            const message = input.value.trim();
+
+            if (!message) return;
+
+            const messages = document.getElementById("messages");
+
+            // User message
+            const userDiv = document.createElement("div");
+            userDiv.className = "prompt";
+            userDiv.innerText = message;
+            messages.appendChild(userDiv);
+
+            input.value = "";
+            messages.scrollTop = messages.scrollHeight;
+
+            // Bot response
+            const response = await fetch(
+                `http://127.0.0.1:8000/chat?input=${encodeURIComponent(message)}`
+            );
+            const data = await response.json();
+
+            const botDiv = document.createElement("div");
+            botDiv.className = "response";
+            botDiv.innerText = data.response;
+            messages.appendChild(botDiv);
+
+            messages.scrollTop = messages.scrollHeight;
+
+
+
+        }
+        let container = document.querySelector(".number");
+
+        let books = JSON.parse(localStorage.getItem("books")) || [];
+
+        container.innerHTML = ""; // clear first
+
+        books.forEach(e => {
+            container.innerHTML += `
+        <div class="book">
+            <img src=${e.url} alt="">
+            <h3>${e.title}</h3>
+            <div>${e.author}</div>
+            <button class="btn" >Issue</button>
+        </div>
+    `;
+        });
+
+    </script>
+</body>
+
+</html>
